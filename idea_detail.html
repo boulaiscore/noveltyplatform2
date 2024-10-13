@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dettagli Idea</title>
+</head>
+<body>
+    <h1>Dettagli dell'Idea</h1>
+    <h2>{{ idea.cluster }}</h2>
+    <p><strong>Idea:</strong> {{ idea.idea }}</p>
+    <h3>Articoli associati:</h3>
+    <ul>
+        {% for paper in idea.papers %}
+            <li>{{ paper.title }} - {{ paper.journal }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('list_ideas') }}">Torna alla lista delle idee</a>  <!-- Updated link -->
+</body>
+</html>

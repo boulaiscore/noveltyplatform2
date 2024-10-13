@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista delle Idee</title>
+</head>
+<body>
+    <h1>Lista delle Idee Innovative</h1>
+    <ul>
+        {% for idea in ideas %}
+            <li>
+                <a href="{{ url_for('idea_detail', idea_id=loop.index0) }}">{{ idea.cluster }}</a>: {{ idea.idea }}
+            </li>
+        {% endfor %}
+    </ul>
+    {% if not ideas %}
+        <p>Nessuna idea generata. Prova un altro bisogno aziendale.</p>
+    {% endif %}
+</body>
+</html>
